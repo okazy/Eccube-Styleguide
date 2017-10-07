@@ -1,0 +1,145 @@
+@charset "UTF-8";
+/**
+メディアクエリ
+SP フォーストで記述する。
+Twitter Bootstrap デフォルト準拠
+ */
+/**
+ * ECCUBE 固有のスタイルユーティリティ
+ */
+/*
+フッター
+
+全ページで使用されるフッターのプロジェクトコンポーネントです。
+
+ex [トップページ　フッター](http://demo3.ec-cube.net/)
+
+Markup:
+include /assets/tmpl/elements/11.8.footer.pug
++ec-footerRole
+
+Styleguide 11.3
+*/
+.ec-footerRole {
+  background: #f8f8f8;
+  border-top: 1px solid #e8e8e8;
+  padding-top: 12px;
+  padding-bottom: 24px;
+  margin-top: 36px; }
+  @media only screen and (min-width: 768px) {
+    .ec-footerRole {
+      padding-top: 32px;
+      margin-top: 80px; } }
+  .ec-footerRole .ec-footerRole__inner {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: Roboto, "游ゴシック", YuGothic, "Yu Gothic", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", Arial, "メイリオ", Meiryo, sans-serif;
+    line-height: 1.4;
+    color: #525263;
+    -webkit-text-size-adjust: 100%;
+    width: 100%;
+    max-width: 1150px; }
+    .ec-footerRole .ec-footerRole__inner:after {
+      content: " ";
+      display: table; }
+    .ec-footerRole .ec-footerRole__inner:after {
+      clear: both; }
+    .ec-footerRole .ec-footerRole__inner textarea {
+      /* for chrome fontsize bug */
+      font-family: sans-serif; }
+    .ec-footerRole .ec-footerRole__inner img {
+      max-width: 100%; }
+    .ec-footerRole .ec-footerRole__inner html {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box; }
+    .ec-footerRole .ec-footerRole__inner *,
+    .ec-footerRole .ec-footerRole__inner *::before,
+    .ec-footerRole .ec-footerRole__inner *::after {
+      -webkit-box-sizing: inherit;
+      -moz-box-sizing: inherit;
+      box-sizing: inherit; }
+    .ec-footerRole .ec-footerRole__inner img {
+      width: 100%; }
+
+/*
+フッターナビ
+
+フッタープロジェクトで使用するナビゲーション用のコンポーネントです。
+
+Markup:
+include /assets/tmpl/elements/11.8.footer.pug
++ec-footerNav
+
+sg-wrapper:
+<div class="ec-footerRole">
+  <div class="ec-footerRole__inner">
+    <sg-wrapper-content/>
+  </div>
+</div>
+
+Styleguide 11.3.1
+*/
+.ec-footerNavi {
+  list-style: none;
+  text-align: center;
+  padding: 0; }
+  .ec-footerNavi .ec-footerNavi__link {
+    display: inline-block;
+    margin: 0 8px 8px; }
+    .ec-footerNavi .ec-footerNavi__link a {
+      color: inherit;
+      text-decoration: none; }
+    .ec-footerNavi .ec-footerNavi__link:hover a {
+      color: #686868;
+      text-decoration: none; }
+
+/*
+フッタータイトル
+
+フッタープロジェクトで使用するタイトル用のコンポーネントです。
+
+Markup:
+include /assets/tmpl/elements/11.8.footer.pug
++ec-footerTitle
+
+sg-wrapper:
+<div class="ec-footerRole">
+  <div class="ec-footerRole__inner">
+    <sg-wrapper-content/>
+  </div>
+</div>
+
+Styleguide 11.3.2
+*/
+.ec-footerTitle {
+  margin-top: 20px;
+  text-align: center; }
+  @media only screen and (min-width: 768px) {
+    .ec-footerTitle {
+      margin-top: 80px; } }
+  .ec-footerTitle .ec-footerTitle__logo {
+    font-weight: bold; }
+    .ec-footerTitle .ec-footerTitle__logo a {
+      color: inherit;
+      text-decoration: none; }
+    .ec-footerTitle .ec-footerTitle__logo a:hover {
+      text-decoration: none; }
+    .ec-footerTitle .ec-footerTitle__logo a {
+      font-size: 16px;
+      color: inherit; }
+      @media only screen and (min-width: 768px) {
+        .ec-footerTitle .ec-footerTitle__logo a {
+          font-size: 2em; } }
+    .ec-footerTitle .ec-footerTitle__logo:hover a {
+      color: #686868;
+      text-decoration: none; }
+  .ec-footerTitle .ec-footerTitle__copyright {
+    font-size: 10px; }
+    @media only screen and (min-width: 768px) {
+      .ec-footerTitle .ec-footerTitle__copyright {
+        font-size: .8em; } }

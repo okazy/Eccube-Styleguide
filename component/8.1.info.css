@@ -1,0 +1,154 @@
+@charset "UTF-8";
+/**
+メディアクエリ
+SP フォーストで記述する。
+Twitter Bootstrap デフォルト準拠
+ */
+/*
+お知らせ
+
+新着情報やバナーなどの掲載項目を紹介していきます。
+
+sg-wrapper:
+<div class="ec-role">
+  <sg-wrapper-content/>
+</div>
+
+Styleguide 8.1
+*/
+/*
+新着情報
+
+新着情報の掲載をします。
+
+ex [トップページ　新着情報部分](http://demo3.ec-cube.net/)
+
+Markup:
+include /assets/tmpl/elements/8.1.info.pug
++ec-news
+
+Styleguide 8.1.1
+*/
+.ec-news {
+  margin-bottom: 16px;
+  background: #F8F8F8; }
+  @media only screen and (min-width: 768px) {
+    .ec-news {
+      margin-right: 3%; } }
+  @media only screen and (min-width: 768px) {
+    .ec-news {
+      margin-bottom: 32px; } }
+  .ec-news .ec-news__title {
+    font-weight: bold;
+    padding: 8px;
+    font-size: 16px;
+    text-align: center; }
+    @media only screen and (min-width: 768px) {
+      .ec-news .ec-news__title {
+        padding: 16px;
+        text-align: left;
+        font-size: 24px; } }
+  .ec-news .ec-news__items {
+    padding: 0;
+    list-style: none;
+    border-top: 1px dotted #ccc; }
+
+/*
+折りたたみ項目
+
+折りたたみ項目を掲載します。
+
+ex [トップページ　折りたたみ項目部分](http://demo3.ec-cube.net/)
+
+Markup:
+include /assets/tmpl/elements/8.1.info.pug
++b.ec-news
+        +e.title 新着情報
+        +e.UL.items
+            +e.LI.item
+                +b.ec-newsline.is_active
+                    +e.info
+                        +e.date 2016/09/29
+                        +e.comment サイトオープンしました
+                        +e.close
+                            a.ec-closeBtn--circle
+                                span.ec-closeBtn--circle__icon
+                                    .ec-icon
+                                        img(src='/moc/icon/angle-down-white.svg', alt='')
+                    +e.description 一人暮らしからオフィスなどさまざまなシーンで あなたの生活をサポートするグッズをご家庭へお届けします！
+
+Styleguide 8.1.2
+*/
+.ec-newsline {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  padding: 0 16px; }
+  .ec-newsline .ec-newsline__info {
+    width: 100%;
+    padding: 16px 0; }
+    .ec-newsline .ec-newsline__info:after {
+      content: " ";
+      display: table; }
+    .ec-newsline .ec-newsline__info:after {
+      clear: both; }
+  .ec-newsline .ec-newsline__date {
+    display: inline-block;
+    margin-right: 10px;
+    float: left; }
+  .ec-newsline .ec-newsline__comment {
+    display: inline-block;
+    float: left; }
+  .ec-newsline .ec-newsline__close {
+    float: right;
+    display: inline-block;
+    text-align: right; }
+    .ec-newsline .ec-newsline__close .ec-closeBtn--circle {
+      display: inline-block;
+      width: 25px;
+      height: 25px;
+      min-width: 25px;
+      min-height: 25px; }
+  .ec-newsline .ec-newsline__description {
+    width: 100%;
+    height: 0;
+    transition: all .2s ease-out; }
+  .ec-newsline.is_active .ec-newsline__description {
+    height: auto;
+    transition: all .2s ease-out;
+    padding-bottom: 16px; }
+  .ec-newsline.is_active .ec-icon img {
+    transform: rotateX(180deg); }
+
+/*
+バナー
+
+バナー形式でお知ら情報を伝える際の背景つきボックスです。
+
+ex [トップページ　バナー部分](http://demo3.ec-cube.net/)
+
+Markup:
+include /assets/tmpl/elements/8.1.info.pug
++ec-banner
+
+Styleguide 8.1.3
+*/
+.ec-banner {
+  padding: 16px;
+  margin-bottom: 16px;
+  background: #F8F8F8;
+  text-align: center;
+  font-weight: bold;
+  border: 1px solid #ccc; }
+  @media only screen and (min-width: 768px) {
+    .ec-banner {
+      margin-left: 3%;
+      margin-bottom: 16px; } }
+  .ec-banner .ec-banner__intro {
+    color: #DE5D50;
+    font-size: 20px;
+    font-weight: bold; }
+  .ec-banner .ec-banner__title {
+    color: #DE5D50;
+    font-size: 32px;
+    font-weight: bold; }

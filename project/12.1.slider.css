@@ -1,0 +1,114 @@
+@charset "UTF-8";
+/**
+メディアクエリ
+SP フォーストで記述する。
+Twitter Bootstrap デフォルト準拠
+ */
+/*
+トップページ
+
+トップページ スライド部に関する Project コンポーネントを定義します。
+
+ex [トップページ](http://demo3.ec-cube.net/)
+
+Markup:
+include /assets/tmpl/elements/12.1.slider.pug
++ec-sliderRole
+
+Styleguide 12.1
+*/
+.ec-sliderRole {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: Roboto, "游ゴシック", YuGothic, "Yu Gothic", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", Arial, "メイリオ", Meiryo, sans-serif;
+  line-height: 1.4;
+  color: #525263;
+  -webkit-text-size-adjust: 100%;
+  width: 100%;
+  max-width: 1150px;
+  margin-bottom: 24px; }
+  .ec-sliderRole:after {
+    content: " ";
+    display: table; }
+  .ec-sliderRole:after {
+    clear: both; }
+  .ec-sliderRole textarea {
+    /* for chrome fontsize bug */
+    font-family: sans-serif; }
+  .ec-sliderRole img {
+    max-width: 100%; }
+  .ec-sliderRole html {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; }
+  .ec-sliderRole *,
+  .ec-sliderRole *::before,
+  .ec-sliderRole *::after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit; }
+  .ec-sliderRole img {
+    width: 100%; }
+  .ec-sliderRole ul {
+    padding: 0;
+    list-style: none; }
+
+.ec-sliderItemRole {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: Roboto, "游ゴシック", YuGothic, "Yu Gothic", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", Arial, "メイリオ", Meiryo, sans-serif;
+  line-height: 1.4;
+  color: #525263;
+  -webkit-text-size-adjust: 100%;
+  width: 100%;
+  max-width: 1150px;
+  margin-bottom: 24px; }
+  .ec-sliderItemRole:after {
+    content: " ";
+    display: table; }
+  .ec-sliderItemRole:after {
+    clear: both; }
+  .ec-sliderItemRole textarea {
+    /* for chrome fontsize bug */
+    font-family: sans-serif; }
+  .ec-sliderItemRole img {
+    max-width: 100%; }
+  .ec-sliderItemRole html {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; }
+  .ec-sliderItemRole *,
+  .ec-sliderItemRole *::before,
+  .ec-sliderItemRole *::after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit; }
+  .ec-sliderItemRole img {
+    width: 100%; }
+  .ec-sliderItemRole ul {
+    padding: 0;
+    list-style: none; }
+  .ec-sliderItemRole .item_nav {
+    display: none; }
+    @media only screen and (min-width: 768px) {
+      .ec-sliderItemRole .item_nav {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0; } }
+  .ec-sliderItemRole .slideThumb {
+    margin-bottom: 25px;
+    opacity: .8; }
+    .ec-sliderItemRole .slideThumb:focus {
+      outline: none; }
+    .ec-sliderItemRole .slideThumb:hover {
+      opacity: 1; }
+    .ec-sliderItemRole .slideThumb img {
+      width: 80%; }

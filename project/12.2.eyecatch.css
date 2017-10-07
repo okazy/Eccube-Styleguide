@@ -1,0 +1,109 @@
+@charset "UTF-8";
+/**
+メディアクエリ
+SP フォーストで記述する。
+Twitter Bootstrap デフォルト準拠
+ */
+/*
+アイキャッチ
+
+トップページ アイキャッチ部に関する Project コンポーネントを定義します。
+
+ex [トップページスライダー直下 アイキャッチ部](http://demo3.ec-cube.net/)
+
+Markup:
+include /assets/tmpl/elements/12.2.eyecatch.pug
++ec-eyecatchRole
+
+Styleguide 12.2
+*/
+.ec-eyecatchRole {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: Roboto, "游ゴシック", YuGothic, "Yu Gothic", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", Arial, "メイリオ", Meiryo, sans-serif;
+  line-height: 1.4;
+  color: #525263;
+  -webkit-text-size-adjust: 100%;
+  width: 100%;
+  max-width: 1150px;
+  margin-bottom: 30px;
+  text-align: center; }
+  .ec-eyecatchRole:after {
+    content: " ";
+    display: table; }
+  .ec-eyecatchRole:after {
+    clear: both; }
+  .ec-eyecatchRole textarea {
+    /* for chrome fontsize bug */
+    font-family: sans-serif; }
+  .ec-eyecatchRole img {
+    max-width: 100%; }
+  .ec-eyecatchRole html {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; }
+  .ec-eyecatchRole *,
+  .ec-eyecatchRole *::before,
+  .ec-eyecatchRole *::after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit; }
+  .ec-eyecatchRole img {
+    width: 100%; }
+  .ec-eyecatchRole .ec-eyecatchRole__intro {
+    box-sizing: border-box;
+    padding: 0 3%; }
+  .ec-eyecatchRole .ec-eyecatchRole__introTitle {
+    margin-top: 10px;
+    font-size: 24px;
+    font-weight: bold; }
+    @media only screen and (min-width: 768px) {
+      .ec-eyecatchRole .ec-eyecatchRole__introTitle {
+        font-size: 32px; } }
+  .ec-eyecatchRole p {
+    font-size: 16px;
+    margin-bottom: 20px; }
+    @media only screen and (min-width: 768px) {
+      .ec-eyecatchRole p {
+        font-size: 20px; } }
+
+/*
+トップページ
+
+アイキャッチで使用する 分割画像レイアウトです。
+
+ex [トップページ](http://demo3.ec-cube.net/)
+
+Markup:
+include /assets/tmpl/elements/12.2.eyecatch.pug
++ec-eyecatchTop
+
+sg-wrapper:
+<div class="ec-eyecatchRole">
+  <sg-wrapper-content/>
+</div>
+
+
+
+Styleguide 12.2.1
+*/
+.ec-splitImg {
+  display: flex; }
+  .ec-splitImg .ec-splitImg__item {
+    width: 50%; }
+    .ec-splitImg .ec-splitImg__item img {
+      width: 100%; }
+  .ec-splitImg .ec-splitImg__item:nth-of-type(1) {
+    padding-right: 8px; }
+    @media only screen and (min-width: 768px) {
+      .ec-splitImg .ec-splitImg__item:nth-of-type(1) {
+        padding-right: 3%; } }
+  .ec-splitImg .ec-splitImg__item:nth-of-type(2) {
+    padding-left: 8px; }
+    @media only screen and (min-width: 768px) {
+      .ec-splitImg .ec-splitImg__item:nth-of-type(2) {
+        padding-left: 3%; } }

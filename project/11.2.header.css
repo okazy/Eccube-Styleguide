@@ -1,0 +1,742 @@
+@charset "UTF-8";
+/**
+メディアクエリ
+SP フォーストで記述する。
+Twitter Bootstrap デフォルト準拠
+ */
+/**
+ * ECCUBE 固有のスタイルユーティリティ
+ */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    visibility: hidden; }
+  100% {
+    opacity: 1;
+    visibility: visible; } }
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    visibility: visible; }
+  100% {
+    opacity: 0;
+    visibility: hidden; } }
+
+/*
+ヘッダー
+
+ヘッダー用のプロジェクトコンポーネントを提供します。
+
+ex [トップページ　ヘッダー](http://demo3.ec-cube.net/)
+
+Markup:
+include /assets/tmpl/elements/11.2.header.pug
+include /assets/tmpl/elements/11.3.headerNavi.pug
+include /assets/tmpl/elements/11.4.categoryNavi.pug
++b.ec-layoutRole
+  +e.header
+    +ec-headerRole
+    +ec-headerNaviRole
+    +ec-cateoryNaviRole
+
+Styleguide 11.2
+*/
+.ec-layoutRole {
+  width: 100%;
+  transition: transform 0.3s;
+  background: #fff; }
+  .ec-layoutRole .ec-layoutRole__contentTop {
+    padding: 0; }
+  .ec-layoutRole .ec-layoutRole__contents {
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+    max-width: 1150px;
+    display: flex;
+    flex-wrap: nowrap; }
+  .ec-layoutRole .ec-layoutRole__main {
+    width: 100%; }
+  .ec-layoutRole .ec-layoutRole__mainWithColumn {
+    width: 100%; }
+    @media only screen and (min-width: 768px) {
+      .ec-layoutRole .ec-layoutRole__mainWithColumn {
+        width: 75%; } }
+  .ec-layoutRole .ec-layoutRole__mainBetweenColumn {
+    width: 100%; }
+    @media only screen and (min-width: 768px) {
+      .ec-layoutRole .ec-layoutRole__mainBetweenColumn {
+        width: 50%; } }
+  .ec-layoutRole .ec-layoutRole__left,
+  .ec-layoutRole .ec-layoutRole__right {
+    display: none; }
+    @media only screen and (min-width: 768px) {
+      .ec-layoutRole .ec-layoutRole__left,
+      .ec-layoutRole .ec-layoutRole__right {
+        display: block;
+        width: 25%; } }
+
+.ec-layoutRole.is_active {
+  transform: translateX(-260px);
+  transition: transform 0.3s;
+  z-index: 10; }
+  @media only screen and (min-width: 768px) {
+    .ec-layoutRole.is_active {
+      transform: translateX(0px); } }
+
+.ec-headerRole {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: Roboto, "游ゴシック", YuGothic, "Yu Gothic", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", Arial, "メイリオ", Meiryo, sans-serif;
+  line-height: 1.4;
+  color: #525263;
+  -webkit-text-size-adjust: 100%;
+  width: 100%;
+  max-width: 1150px;
+  padding-top: 15px;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: auto; }
+  .ec-headerRole:after {
+    content: " ";
+    display: table; }
+  .ec-headerRole:after {
+    clear: both; }
+  .ec-headerRole textarea {
+    /* for chrome fontsize bug */
+    font-family: sans-serif; }
+  .ec-headerRole img {
+    max-width: 100%; }
+  .ec-headerRole html {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; }
+  .ec-headerRole *,
+  .ec-headerRole *::before,
+  .ec-headerRole *::after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit; }
+  .ec-headerRole img {
+    width: 100%; }
+  .ec-headerRole:after {
+    display: none; }
+  @media only screen and (min-width: 768px) {
+    .ec-headerRole:after {
+      content: " ";
+      display: table; }
+    .ec-headerRole:after {
+      clear: both; } }
+  .ec-headerRole::before {
+    display: none; }
+  @media only screen and (min-width: 768px) {
+    .ec-headerRole {
+      width: 100%; }
+      .ec-headerRole:after {
+        content: " ";
+        display: table; }
+      .ec-headerRole:after {
+        clear: both; } }
+  .ec-headerRole .ec-headerRole__title {
+    width: 73%; }
+    @media only screen and (min-width: 768px) {
+      .ec-headerRole .ec-headerRole__title {
+        width: 100%; } }
+  .ec-headerRole .ec-headerRole__cart {
+    display: none;
+    position: absolute;
+    top: 15px;
+    right: 0; }
+    @media only screen and (min-width: 768px) {
+      .ec-headerRole .ec-headerRole__cart {
+        display: block; }
+        .ec-headerRole .ec-headerRole__cart a {
+          color: inherit;
+          text-decoration: none; }
+        .ec-headerRole .ec-headerRole__cart a:hover {
+          text-decoration: none; } }
+  .ec-headerRole .ec-headerRole__navSP {
+    display: block;
+    position: absolute;
+    top: 15px;
+    width: 27%;
+    right: 0px;
+    text-align: right; }
+    @media only screen and (min-width: 768px) {
+      .ec-headerRole .ec-headerRole__navSP {
+        display: none; } }
+
+.ec-headerNaviRole {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: Roboto, "游ゴシック", YuGothic, "Yu Gothic", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", Arial, "メイリオ", Meiryo, sans-serif;
+  line-height: 1.4;
+  color: #525263;
+  -webkit-text-size-adjust: 100%;
+  width: 100%;
+  max-width: 1150px; }
+  .ec-headerNaviRole:after {
+    content: " ";
+    display: table; }
+  .ec-headerNaviRole:after {
+    clear: both; }
+  .ec-headerNaviRole textarea {
+    /* for chrome fontsize bug */
+    font-family: sans-serif; }
+  .ec-headerNaviRole img {
+    max-width: 100%; }
+  .ec-headerNaviRole html {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; }
+  .ec-headerNaviRole *,
+  .ec-headerNaviRole *::before,
+  .ec-headerNaviRole *::after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit; }
+  .ec-headerNaviRole img {
+    width: 100%; }
+  .ec-headerNaviRole:after {
+    content: " ";
+    display: table; }
+  .ec-headerNaviRole:after {
+    clear: both; }
+  .ec-headerNaviRole .ec-headerNaviRole__search {
+    display: none; }
+    @media only screen and (min-width: 768px) {
+      .ec-headerNaviRole .ec-headerNaviRole__search {
+        display: block;
+        float: left;
+        width: 370px; }
+        .ec-headerNaviRole .ec-headerNaviRole__search a {
+          color: inherit;
+          text-decoration: none; }
+        .ec-headerNaviRole .ec-headerNaviRole__search a:hover {
+          text-decoration: none; } }
+  .ec-headerNaviRole .ec-headerNaviRole__nav {
+    display: none; }
+    @media only screen and (min-width: 768px) {
+      .ec-headerNaviRole .ec-headerNaviRole__nav {
+        display: block;
+        float: right;
+        width: 50%; }
+        .ec-headerNaviRole .ec-headerNaviRole__nav a {
+          color: inherit;
+          text-decoration: none; }
+        .ec-headerNaviRole .ec-headerNaviRole__nav a:hover {
+          text-decoration: none; } }
+
+.ec-headerNavSP {
+  margin-right: 10px;
+  width: 100%;
+  height: auto;
+  vertical-align: top;
+  text-align: right; }
+  .ec-headerNavSP .ec-headerNavSP__item {
+    display: inline-block;
+    margin-right: 10px;
+    width: auto;
+    text-align: center; }
+  .ec-headerNavSP .ec-headerNavSP__item:nth-of-type(2) {
+    margin-left: 5px; }
+  .ec-headerNavSP .ec-cartNaviSP {
+    display: inline-block;
+    font-size: 30px;
+    cursor: pointer;
+    position: relative; }
+    .ec-headerNavSP .ec-cartNaviSP .ec-cartNaviSP__icon {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      color: #525263; }
+    .ec-headerNavSP .ec-cartNaviSP .ec-cartNaviSP__badge {
+      display: inline-block;
+      padding: 3px 7px;
+      min-width: 10px;
+      font-size: 10px;
+      font-weight: 700;
+      line-height: 1;
+      color: #fff;
+      text-align: center;
+      white-space: nowrap;
+      vertical-align: baseline;
+      background: #DE5D50;
+      border-radius: 10px;
+      position: absolute;
+      top: 0;
+      right: -10px; }
+  .ec-headerNavSP .ec-headerNavSP__itemMenu {
+    display: block;
+    position: relative;
+    width: 25px;
+    height: 15px;
+    cursor: pointer; }
+    .ec-headerNavSP .ec-headerNavSP__itemMenu span {
+      display: inline-block;
+      transition: all .4s;
+      box-sizing: border-box;
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: #525263; }
+    .ec-headerNavSP .ec-headerNavSP__itemMenu span:nth-of-type(1) {
+      top: 0;
+      transform: translateY(0) rotate(0);
+      transition: all .3s; }
+    .ec-headerNavSP .ec-headerNavSP__itemMenu span:nth-of-type(2) {
+      top: 6px;
+      opacity: 1;
+      transition: all .3s; }
+    .ec-headerNavSP .ec-headerNavSP__itemMenu span:nth-of-type(3) {
+      bottom: 0;
+      transform: translateY(0) rotate(0);
+      transition: all .3s; }
+
+.have_curtain .ec-headerNavSP__itemMenu span:nth-of-type(1) {
+  transform: translateY(2px) rotate(-45deg);
+  transition: all .3s; }
+
+.have_curtain .ec-headerNavSP__itemMenu span:nth-of-type(2) {
+  opacity: 0;
+  transition: all .3s; }
+
+.have_curtain .ec-headerNavSP__itemMenu span:nth-of-type(3) {
+  transform: translateY(-10px) rotate(45deg);
+  transition: all .3s; }
+
+/*
+ヘッダー：タイトル
+
+ヘッダー内で使用されるタイトルコンポーネントです。
+
+Markup:
+include /assets/tmpl/elements/11.2.header.pug
++ec-headerTitle
+
+Styleguide 11.2.1
+*/
+.ec-headerTitle {
+  font-size: 16px;
+  font-family: Roboto, "游ゴシック", YuGothic, "Yu Gothic", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", Arial, "メイリオ", Meiryo, sans-serif;
+  line-height: 1.4;
+  color: #525263;
+  -webkit-text-size-adjust: 100%; }
+  .ec-headerTitle textarea {
+    /* for chrome fontsize bug */
+    font-family: sans-serif; }
+  .ec-headerTitle img {
+    max-width: 100%; }
+  .ec-headerTitle html {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; }
+  .ec-headerTitle *,
+  .ec-headerTitle *::before,
+  .ec-headerTitle *::after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit; }
+  .ec-headerTitle img {
+    width: 100%; }
+  .ec-headerTitle .ec-headerTitle__title h1 {
+    margin: 0;
+    padding: 0; }
+  .ec-headerTitle .ec-headerTitle__title a {
+    display: inline-block;
+    margin-bottom: 15px;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: #000; }
+    @media only screen and (min-width: 768px) {
+      .ec-headerTitle .ec-headerTitle__title a {
+        margin-bottom: 30px;
+        font-size: 40px; } }
+    .ec-headerTitle .ec-headerTitle__title a:hover {
+      color: #666; }
+  .ec-headerTitle .ec-headerTitle__subtitle {
+    font-size: 10px; }
+    @media only screen and (min-width: 768px) {
+      .ec-headerTitle .ec-headerTitle__subtitle {
+        font-size: 16px;
+        margin-bottom: 10px; } }
+    .ec-headerTitle .ec-headerTitle__subtitle a {
+      display: inline-block;
+      color: #0092C4;
+      text-decoration: none;
+      cursor: pointer; }
+
+/*
+ヘッダー：ユーザナビゲーション
+
+ヘッダー内でユーザに関与するナビゲーションコンポーネントです。
+<br><br>
+`.ec-headerNaviRole`>`.ec-headerNaviRole__nav`内に記述すると２カラム上の右側に配置することができます。
+
+Markup:
+include /assets/tmpl/elements/11.3.headerNavi.pug
++ec-headerNav
+
+sg-wrapper:
+<div class="ec-headerNaviRole">
+  <div class="ec-headerNaviRole__nav">
+    <sg-wrapper-content/>
+  </div>
+</div>
+
+Styleguide 11.2.3
+*/
+.ec-headerNav {
+  text-align: right; }
+  .ec-headerNav .ec-headerNav__item {
+    margin-left: 0;
+    display: inline-block;
+    font-size: 28px;
+    line-height: 50px; }
+    @media only screen and (min-width: 768px) {
+      .ec-headerNav .ec-headerNav__item {
+        margin-left: 10px; } }
+    .ec-headerNav .ec-headerNav__item a {
+      color: inherit;
+      text-decoration: none; }
+    .ec-headerNav .ec-headerNav__item a:hover {
+      text-decoration: none; }
+    .ec-headerNav .ec-headerNav__item span {
+      font-size: 14px; }
+    .ec-headerNav .ec-headerNav__item .ec-icon img {
+      width: 30px;
+      height: 30px;
+      vertical-align: middle;
+      margin-right: 5px; }
+
+/*
+ヘッダー：検索ボックス
+
+ヘッダー内で使用される商品検索コンポーネントです。
+<br><br>
+`.ec-headerNaviRole`>`.ec-headerNaviRole__search`内に記述すると２カラム上の右側に配置することができます。
+
+Markup:
+include /assets/tmpl/elements/11.3.headerNavi.pug
++ec-headerSearch
+
+sg-wrapper:
+<div class="ec-headerNaviRole">
+  <div class="ec-headerNaviRole__search">
+    <sg-wrapper-content/>
+  </div>
+</div>
+
+Styleguide 11.2.4
+*/
+.ec-headerSearch:after {
+  content: " ";
+  display: table; }
+
+.ec-headerSearch:after {
+  clear: both; }
+
+.ec-headerSearch .ec-headerSearch__category {
+  float: none; }
+  @media only screen and (min-width: 768px) {
+    .ec-headerSearch .ec-headerSearch__category {
+      float: left;
+      width: 43%; } }
+  .ec-headerSearch .ec-headerSearch__category .ec-select {
+    margin-bottom: 6px; }
+  .ec-headerSearch .ec-headerSearch__category select {
+    width: auto;
+    max-width: 100%;
+    height: 50px;
+    border: 1px solid #ccc;
+    font-size: 1.6rem;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    box-shadow: none;
+    box-sizing: border-box;
+    -webkit-appearance: menulist;
+    appearance: menulist; }
+    @media only screen and (min-width: 768px) {
+      .ec-headerSearch .ec-headerSearch__category select {
+        max-width: 180px; } }
+
+.ec-headerSearch .ec-headerSearch__keyword {
+  float: none;
+  height: 50px;
+  padding: 0 40px 0 10px;
+  border-bottom: 1px solid #ccc;
+  position: relative;
+  color: #525263; }
+  @media only screen and (min-width: 768px) {
+    .ec-headerSearch .ec-headerSearch__keyword {
+      float: right;
+      width: 57%; } }
+  .ec-headerSearch .ec-headerSearch__keyword input[type="search"] {
+    height: 50px;
+    width: 100%;
+    font-size: 1.6rem;
+    border: 0 none;
+    padding: 0.5em 0;
+    box-shadow: none;
+    background: none;
+    box-sizing: border-box; }
+  .ec-headerSearch .ec-headerSearch__keyword .ec-icon {
+    width: 25px;
+    height: 25px; }
+
+.ec-headerSearch .ec-headerSearch__keywordBtn {
+  border: 0;
+  background: none;
+  position: absolute;
+  right: 0;
+  top: 6px;
+  display: block;
+  font-size: 25px;
+  overflow: hidden;
+  white-space: nowrap;
+  z-index: 1; }
+
+/*
+ヘッダー：カテゴリナビ
+
+ヘッダー内で使用されている商品のカテゴリ一覧として使用します。
+
+Markup:
+include /assets/tmpl/elements/11.4.categoryNavi.pug
++ec-itemNav
+
+sg-wrapper:
+<div class="ec-cateoryNaviRole">
+  <sg-wrapper-content/>
+</div>
+
+Styleguide 11.2.5
+*/
+.ec-cateoryNaviRole {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: Roboto, "游ゴシック", YuGothic, "Yu Gothic", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", Arial, "メイリオ", Meiryo, sans-serif;
+  line-height: 1.4;
+  color: #525263;
+  -webkit-text-size-adjust: 100%;
+  width: 100%;
+  max-width: 1150px;
+  display: none; }
+  .ec-cateoryNaviRole:after {
+    content: " ";
+    display: table; }
+  .ec-cateoryNaviRole:after {
+    clear: both; }
+  .ec-cateoryNaviRole textarea {
+    /* for chrome fontsize bug */
+    font-family: sans-serif; }
+  .ec-cateoryNaviRole img {
+    max-width: 100%; }
+  .ec-cateoryNaviRole html {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; }
+  .ec-cateoryNaviRole *,
+  .ec-cateoryNaviRole *::before,
+  .ec-cateoryNaviRole *::after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit; }
+  .ec-cateoryNaviRole img {
+    width: 100%; }
+  @media only screen and (min-width: 768px) {
+    .ec-cateoryNaviRole {
+      display: block;
+      width: 100%; }
+      .ec-cateoryNaviRole a {
+        color: inherit;
+        text-decoration: none; }
+      .ec-cateoryNaviRole a:hover {
+        text-decoration: none; } }
+
+.ec-itemNav {
+  display: block;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  text-align: center;
+  list-style: none;
+  position: relative; }
+  @media only screen and (min-width: 768px) {
+    .ec-itemNav {
+      margin: 20px 0 30px;
+      border-bottom: 1px solid #D9D9D9;
+      border-top: 1px solid #D9D9D9; } }
+  .ec-itemNav .ec-itemNav__item {
+    display: inline-block;
+    font-weight: bold; }
+    .ec-itemNav .ec-itemNav__item a {
+      color: inherit;
+      text-decoration: none; }
+    .ec-itemNav .ec-itemNav__item a:hover {
+      text-decoration: none; }
+    .ec-itemNav .ec-itemNav__item:hover {
+      background: #fafafa; }
+    .ec-itemNav .ec-itemNav__item a {
+      display: inline-block;
+      margin-top: 0;
+      padding: 16px;
+      height: 55px; }
+    .ec-itemNav .ec-itemNav__item:hover > .ec-itemNavAccordion {
+      overflow: visible;
+      height: 50px;
+      transition: all .2s ease-out; }
+      .ec-itemNav .ec-itemNav__item:hover > .ec-itemNavAccordion .ec-itemNavAccordion__item {
+        height: 50px;
+        transition: all .2s ease-out; }
+  .ec-itemNav .ec-itemNavAccordion {
+    z-index: 1000;
+    position: absolute;
+    padding: 0;
+    height: 0;
+    overflow: hidden;
+    transition: all .2s ease-out; }
+    .ec-itemNav .ec-itemNavAccordion .ec-itemNavAccordion__item {
+      border-bottom: 1px solid #ccc;
+      list-style: none;
+      height: 0;
+      transition: all .2s ease-out; }
+      .ec-itemNav .ec-itemNavAccordion .ec-itemNavAccordion__item a {
+        list-style: none;
+        border-top: 1px solid #E8E8E8;
+        border-bottom: 1px solid #E8E8E8;
+        margin-top: 0;
+        padding: 15px 10px;
+        min-width: 200px;
+        width: 100%;
+        text-align: left;
+        background: #fff;
+        transition: all .5s ease-out; }
+        .ec-itemNav .ec-itemNavAccordion .ec-itemNavAccordion__item a:hover {
+          background: #fafafa; }
+
+/*
+ヘッダー：SPヘッダー
+
+SP時のみ出現するヘッダーに関係するコンポーネントです。<br>
+ex [トップページ](http://demo3.ec-cube.net/)画面サイズが768px以下に該当。<br>
+<br>
+`.ec-drawerRole`：SPのドロワー内の要素をwrapするコンポーネントです。<br>
+`.ec-headerSearch`、`.ec-headerNav`、`.ec-itemNav`は`.ec-drawerRole`の子要素にある場合、ドロワーに適したスタイルに変化します。<br><br>
+`.ec-overlayRole`：SPのドロワー出現時にz-indexがドロワー以下の要素に半透明の黒背景をかぶせるコンポーネントです。<br>
+
+Styleguide 11.2.6
+*/
+.ec-drawerRole {
+  overflow-y: scroll;
+  display: block;
+  background: #F6F6F6;
+  position: fixed;
+  top: 0;
+  width: 260px;
+  height: 100vh;
+  right: 0;
+  z-index: -1;
+  transition: z-index 0ms 1ms; }
+  @media only screen and (min-width: 768px) {
+    .ec-drawerRole {
+      display: none; } }
+
+.ec-drawerRole.is_active {
+  z-index: 1;
+  transition: z-index 0ms 300ms; }
+  @media only screen and (min-width: 768px) {
+    .ec-drawerRole.is_active {
+      display: none; } }
+
+.ec-drawerRole .ec-headerSearch {
+  padding: 16px 8px 26px;
+  background: #EBEBEB;
+  color: #636378; }
+  .ec-drawerRole .ec-headerSearch select {
+    width: 100% !important; }
+
+.ec-drawerRole .ec-headerNav .ec-headerNav__item {
+  text-align: left;
+  display: block;
+  padding-left: 10px;
+  height: 60px;
+  border-bottom: 1px solid #e8e8e8;
+  line-height: 50px;
+  font-size: 30px; }
+  @media only screen and (min-width: 768px) {
+    .ec-drawerRole .ec-headerNav .ec-headerNav__item {
+      padding: 0 10px;
+      height: 50px; } }
+
+.ec-drawerRole .ec-itemNav .ec-itemNav__item {
+  display: block;
+  text-align: left;
+  border-bottom: 1px solid #e8e8e8;
+  line-height: 50px;
+  font-weight: bold; }
+  .ec-drawerRole .ec-itemNav .ec-itemNav__item a {
+    padding: 0 10px;
+    height: 50px; }
+
+.ec-drawerRole .ec-itemNav .ec-itemNavAccordion {
+  display: none; }
+
+.ec-overlayRole {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0px;
+  left: 0;
+  opacity: 0;
+  background: transparent;
+  transform: translateX(0);
+  transition: all .3s;
+  visibility: hidden; }
+
+.have_curtain .ec-overlayRole {
+  display: block;
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.5);
+  transform: translateX(-260px);
+  transition: all .3s;
+  visibility: visible; }
+
+/*
+ヘッダー：test
+
+test
+
+Markup:
+span.ec-itemAccordionParent test1
+ul.ec-itemNavAccordion
+  li.ec-itemNavAccordion__item
+    a(href='') test2
+    ul.ec-itemNavAccordion
+      li.ec-itemNavAccordion__item
+        a(href='') test3
+        ul.ec-itemNavAccordion
+          li.ec-itemNavAccordion__item
+            a(href='') test4
+
+Styleguide 11.2.7
+*/
+.ec-itemNavAccordion {
+  display: none; }

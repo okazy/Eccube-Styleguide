@@ -1,0 +1,175 @@
+@charset "UTF-8";
+/**
+メディアクエリ
+SP フォーストで記述する。
+Twitter Bootstrap デフォルト準拠
+ */
+/**
+ * ECCUBE 固有のスタイルユーティリティ
+ */
+/*
+商品掲載
+
+トップページに商品掲載するスタイルガイド群です。
+
+sg-wrapper:
+<div class="ec-role">
+  <sg-wrapper-content/>
+
+
+Styleguide 7.1
+*/
+/*
+商品アイテム（商品紹介B）
+
+３項目横並びの商品アイテムを表示します。
+必要に応じて商品詳細や、キャッチコピーなどを添えることが出来ます。
+
+ex [トップページ　商品紹介部分](http://demo3.ec-cube.net/)
+
+Markup:
+include /assets/tmpl/elements/7.1.itembanner.pug
++ec-displayB
+
+Styleguide 7.1.1
+*/
+.ec-displayB {
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column; }
+  @media only screen and (min-width: 768px) {
+    .ec-displayB {
+      flex-direction: row; } }
+  .ec-displayB .ec-displayB__cell {
+    width: 100%;
+    margin-bottom: 16px; }
+    .ec-displayB .ec-displayB__cell a {
+      color: inherit;
+      text-decoration: none; }
+    .ec-displayB .ec-displayB__cell a:hover {
+      text-decoration: none; }
+    @media only screen and (min-width: 768px) {
+      .ec-displayB .ec-displayB__cell {
+        width: 31.4466%;
+        margin-bottom: 0; } }
+    .ec-displayB .ec-displayB__cell:hover {
+      text-decoration: none; }
+      .ec-displayB .ec-displayB__cell:hover img {
+        opacity: .8; }
+      .ec-displayB .ec-displayB__cell:hover a {
+        text-decoration: none; }
+  .ec-displayB .ec-displayB__img {
+    margin-bottom: 15px; }
+  .ec-displayB .ec-displayB__catch {
+    margin-bottom: 15px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #9a947e; }
+  .ec-displayB .ec-displayB__comment {
+    margin-bottom: 14px;
+    text-decoration: none;
+    color: #525263;
+    font-size: 14px; }
+  .ec-displayB .ec-displayB__link {
+    text-decoration: none;
+    font-weight: bold;
+    color: #9a947e; }
+
+/*
+商品アイテム（商品紹介C）
+
+４項目横並びの商品アイテムを表示します。
+
+ex [トップページ　商品紹介部分](http://demo3.ec-cube.net/)
+
+Markup:
+include /assets/tmpl/elements/7.1.itembanner.pug
++ec-displayC
+p hoge
+
+Styleguide 7.1.2
+*/
+.ec-displayC {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 24px; }
+  .ec-displayC .ec-displayC__cell {
+    width: 47%; }
+    .ec-displayC .ec-displayC__cell a {
+      color: inherit;
+      text-decoration: none; }
+    .ec-displayC .ec-displayC__cell a:hover {
+      text-decoration: none; }
+    @media only screen and (min-width: 768px) {
+      .ec-displayC .ec-displayC__cell {
+        width: 22.8775%; } }
+    .ec-displayC .ec-displayC__cell:hover a {
+      text-decoration: none; }
+    .ec-displayC .ec-displayC__cell:hover img {
+      opacity: .8; }
+  .ec-displayC .ec-displayC__img {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px; }
+  .ec-displayC .ec-displayC__catch {
+    display: block;
+    width: 100%;
+    font-weight: bold;
+    color: #9a947e; }
+  .ec-displayC .ec-displayC__title {
+    display: block;
+    width: 100%;
+    color: #525263; }
+  .ec-displayC .ec-displayC__price {
+    display: block;
+    width: 100%;
+    font-weight: bold;
+    color: #525263; }
+  .ec-displayC .ec-displayC__price--sp {
+    display: block;
+    width: 100%;
+    font-weight: bold;
+    color: #DE5D50; }
+
+/*
+商品アイテム（商品紹介D）
+
+６項目横並びの商品アイテムを表示します。
+
+ex [トップページ　商品紹介部分](http://demo3.ec-cube.net/)
+
+Markup:
+include /assets/tmpl/elements/7.1.itembanner.pug
++ec-displayD
+
+Styleguide 7.1.3
+*/
+.ec-displayD {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap-reverse; }
+  @media only screen and (min-width: 768px) {
+    .ec-displayD {
+      box-sizing: border-box;
+      flex-wrap: nowrap; } }
+  .ec-displayD .ec-displayD__cell {
+    width: 30%;
+    margin-bottom: 8px; }
+    .ec-displayD .ec-displayD__cell a {
+      color: inherit;
+      text-decoration: none; }
+    .ec-displayD .ec-displayD__cell a:hover {
+      text-decoration: none; }
+    @media only screen and (min-width: 768px) {
+      .ec-displayD .ec-displayD__cell {
+        width: 14.3083%;
+        margin-bottom: 16px; } }
+    .ec-displayD .ec-displayD__cell:hover {
+      text-decoration: none; }
+      .ec-displayD .ec-displayD__cell:hover img {
+        opacity: .8; }
+  .ec-displayD .ec-displayD__img {
+    display: block;
+    width: 100%; }

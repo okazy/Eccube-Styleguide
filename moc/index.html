@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=no">
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <style>.slick-slider {
+    margin-bottom: 30px;
+}
+
+.slick-dots {
+    position: absolute;
+    bottom: -45px;
+    display: block;
+    width: 100%;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+
+.slick-dots li {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+    padding: 0;
+
+    cursor: pointer;
+}
+
+.slick-dots li button {
+    font-size: 0;
+    line-height: 0;
+    display: block;
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+    cursor: pointer;
+    color: transparent;
+    border: 0;
+    outline: none;
+    background: transparent;
+}
+
+.slick-dots li button:hover,
+.slick-dots li button:focus {
+    outline: none;
+}
+
+.slick-dots li button:hover:before,
+.slick-dots li button:focus:before {
+    opacity: 1;
+}
+
+.slick-dots li button:before {
+    content: " ";
+    line-height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 12px;
+    height: 12px;
+    text-align: center;
+    opacity: .25;
+    background-color: black;
+    border-radius: 50%;
+
+}
+
+.slick-dots li.slick-active button:before {
+    opacity: .75;
+    background-color: black;
+}
+
+.slick-dots li button.thumbnail img {
+    width: 0;
+    height: 0;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="ec-layoutRole">
+      <div class="ec-layoutRole__header">
+        <div class="ec-headerRole">
+          <div class="ec-headerRole__title">
+            <div class="ec-headerTitle">
+              <div class="ec-headerTitle__subtitle">このデモサイトは<a href="#">さくらのクラウド</a>で稼働しています。
+              </div>
+              <div class="ec-headerTitle__title">
+                <h1><a href="/moc/">EC-CUBE3 STYLEGUIDE</a></h1>
+              </div>
+            </div>
+          </div>
+          <div class="ec-headerRole__cart">
+            <div class="ec-cartNavi">
+              <div class="ec-cartNavi__icon"><img src="/moc/icon/cart-dark.svg" alt="cart"></div>
+              <div class="ec-cartNavi__iconClose"><img src="/moc/icon/cross-dark.svg" alt="close"></div>
+              <div class="ec-cartNavi__badge">1</div>
+              <div class="ec-cartNavi__label">合計
+                <div class="ec-cartNavi__price">¥1920</div>
+              </div>
+            </div>
+            <!--.ec-cartNaviNull-->
+            <!--  .ec-cartNaviNull__message-->
+            <!--    p 現在カート内に-->
+            <!--      br-->
+            <!--      | 商品がございません。-->
+            <div class="ec-cartNaviIsset">
+              <div class="ec-cartNaviIsset__cart">
+                <div class="ec-cartNaviIsset__cartImage"><img src="http://demo3.ec-cube.net/upload/save_image/0701104933_5593472d8d179.jpeg">
+                </div>
+                <div class="ec-cartNaviIsset__cartContent">
+                  <div class="ec-cartNaviIsset__cartContentTitle">ミニテーブル
+                  </div>
+                  <div class="ec-cartNaviIsset__cartContentPrice">¥ 12,960
+                    <div class="ec-cartNaviIsset__cartContentTax">税込
+                    </div>
+                  </div>
+                  <div class="ec-cartNaviIsset__cartContentNumber">数量：1
+                  </div>
+                </div>
+              </div>
+              <div class="ec-cartNaviIsset__action"><a class="ec-blockBtn--action" href="/moc/guest/cart1">カートへ進む</a><a class="ec-blockBtn ec-cartNavi--cancel">キャンセル</a>
+              </div>
+            </div>
+          </div>
+          <div class="ec-headerRole__navSP">
+            <div class="ec-headerNavSP">
+              <div class="ec-headerNavSP__item">
+                <div class="ec-cartNaviSP"><a class="ec-cartNaviSP__icon ec-icon--colored" href="/moc/guest/cart1"><img src="/moc/icon/cart-dark.svg" alt=""></a>
+                  <div class="ec-cartNaviSP__badge">1</div>
+                </div>
+              </div>
+              <div class="ec-headerNavSP__item"><a class="ec-headerNavSP__itemMenu"><span></span><span></span><span></span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ec-headerNaviRole">
+          <div class="ec-headerNaviRole__search is is_inDrawer">
+            <div class="ec-headerSearch">
+              <div class="ec-headerSearch__category">
+                <div class="ec-select">
+                  <select>
+                    <option>全ての商品</option>
+                    <option>キッチンツール</option>
+                  </select>
+                </div>
+              </div>
+              <div class="ec-headerSearch__keyword">
+                <div class="ec-input">
+                  <input type="search" placeholder="キーワードを入力">
+                  <button class="ec-headerSearch__keywordBtn" type="submit">
+                    <div class="ec-icon"><img src="/moc/icon/search-dark.svg" alt=""></div>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ec-headerNaviRole__nav is is_inDrawer">
+            <div class="ec-headerNav">
+              <div class="ec-headerNav__item"><a class="ec-icon" href="/moc/guest/register"><img src="/moc/icon/user.svg" alt=""><span>新規会員登録</span></a>
+              </div>
+              <div class="ec-headerNav__item"><a class="ec-icon" href="/moc/guest/login"><img src="/moc/icon/favorite.svg" alt=""><span>お気に入り</span></a>
+              </div>
+              <div class="ec-headerNav__item"><a class="ec-icon" href="/moc/guest/login"><img src="/moc/icon/login.svg" alt=""><span>ログイン</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ec-cateoryNaviRole is is_inDrawer">
+          <ul class="ec-itemNav">
+            <li class="ec-itemNav__item"><a href="/moc/guest/search">新入荷</a>
+            </li>
+            <li class="ec-itemNav__item"><a href="/moc/guest/search">キッチンツール</a>
+              <ul class="ec-itemNavAccordion">
+                <li class="ec-itemNavAccordion__item"><a href="/moc/guest/search">キッチン小物</a></li>
+                <li class="ec-itemNavAccordion__item"><a href="/moc/guest/search">調理器具</a></li>
+                <li class="ec-itemNavAccordion__item"><a href="/moc/guest/search">食器</a></li>
+              </ul>
+            </li>
+            <li class="ec-itemNav__item"><a href="/moc/guest/search">インテリア</a>
+            </li>
+            <li class="ec-itemNav__item"><a href="/moc/guest/search">照明</a>
+            </li>
+            <li class="ec-itemNav__item"><a href="/moc/guest/search">雑貨・小物</a>
+            </li>
+            <li class="ec-itemNav__item"><a href="/moc/guest/search">お買い得品</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="ec-layoutRole__contentTop">
+      </div>
+      <div class="ec-layoutRole__contents">
+        <div class="ec-layoutRole__main">
+          <div class="ec-sliderRole">
+            <div class="main_visual">
+              <div class="item"><img src="http://demo3.ec-cube.net//template/default/img/top/mv01.jpg"></div>
+              <div class="item"><img src="http://demo3.ec-cube.net//template/default/img/top/mv02.jpg"></div>
+              <div class="item"><img src="http://demo3.ec-cube.net//template/default/img/top/mv03.jpg"></div>
+            </div>
+          </div>
+          <div class="ec-eyecatchRole">
+            <div class="ec-grid2">
+              <div class="ec-grid2__cell">
+                <div class="ec-splitImg">
+                  <div class="ec-splitImg__item"><img src="http://demo3.ec-cube.net/template/default/img/top/img01.jpg">
+                  </div>
+                  <div class="ec-splitImg__item"><img src="http://demo3.ec-cube.net/template/default/img/top/img02.jpg">
+                  </div>
+                </div>
+              </div>
+              <div class="ec-grid2__cell">
+                <div class="ec-eyecatchRole__intro">
+                  <p class="ec-eyecatchRole__introTitle"> 新入荷商品特集</p>
+                  <p class="ec-heading-bold">この季節にぴったりな商品をご用意しました</p>
+                  <p class="ec-font-size-4">さわやかな日差しが過ごしやすい季節。心地よいくらしのための、お部屋のアクセントになるおすすめのファブリックやグッズをご紹介します。</p>
+                  <p><a class="ec-inlineBtn--primary">一覧を見る<span class="ec-icon"><img src="/moc/icon/angle-right-white.svg"></span></a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ec-role">
+            <div class="ec-displayB">
+              <div class="ec-displayB__cell"><a href="/moc/guest/item/">
+                  <div class="ec-displayB__img"><img src="http://demo3.ec-cube.net/template/default/img/top/img03.jpg">
+                  </div>
+                  <div class="ec-displayB__catch">お気に入りのエスプレッソタイム
+                  </div>
+                  <div class="ec-displayB__comment ec-font-size-1">コーヒータイムを上質な時間にしてくれる、口当たりのよさとデザイン性を兼ね備えたエスプレッソカップを集めました・・・
+                  </div>
+                  <div class="ec-displayB__link">read more
+                  </div></a>
+              </div>
+              <div class="ec-displayB__cell"><a href="/moc/guest/item/">
+                  <div class="ec-displayB__img"><img src="http://demo3.ec-cube.net/template/default/img/top/img03.jpg">
+                  </div>
+                  <div class="ec-displayB__catch">お気に入りのエスプレッソタイム
+                  </div>
+                  <div class="ec-displayB__comment ec-font-size-1">コーヒータイムを上質な時間にしてくれる、口当たりのよさとデザイン性を兼ね備えたエスプレッソカップを集めました・・・
+                  </div>
+                  <div class="ec-displayB__link">read more
+                  </div></a>
+              </div>
+              <div class="ec-displayB__cell"><a href="/moc/guest/item/">
+                  <div class="ec-displayB__img"><img src="http://demo3.ec-cube.net/template/default/img/top/img03.jpg">
+                  </div>
+                  <div class="ec-displayB__catch">お気に入りのエスプレッソタイム
+                  </div>
+                  <div class="ec-displayB__comment ec-font-size-1">コーヒータイムを上質な時間にしてくれる、口当たりのよさとデザイン性を兼ね備えたエスプレッソカップを集めました・・・
+                  </div>
+                  <div class="ec-displayB__link">read more
+                  </div></a>
+              </div>
+            </div>
+            <div class="ec-displayC">
+              <div class="ec-displayC__cell"><a href="/moc/guest/item/">
+                  <div class="ec-displayC__img"><img src="http://demo3.ec-cube.net/upload/save_image/0701104933_5593472d8d179.jpeg">
+                  </div>
+                  <div class="ec-displayC__catch">足の透かし模様が美しいミニテーブル
+                  </div>
+                  <div class="ec-displayC__title">ミニテーブル
+                  </div>
+                  <div class="ec-displayC__price">¥ 1,785
+                  </div></a>
+              </div>
+              <div class="ec-displayC__cell"><a href="/moc/guest/item/">
+                  <div class="ec-displayC__img"><img src="http://demo3.ec-cube.net/upload/save_image/0701104933_5593472d8d179.jpeg">
+                  </div>
+                  <div class="ec-displayC__catch">足の透かし模様が美しいミニテーブル
+                  </div>
+                  <div class="ec-displayC__title">ミニテーブル
+                  </div>
+                  <div class="ec-displayC__price">¥ 1,785
+                  </div></a>
+              </div>
+              <div class="ec-displayC__cell"><a href="/moc/guest/item/">
+                  <div class="ec-displayC__img"><img src="http://demo3.ec-cube.net/upload/save_image/0701104933_5593472d8d179.jpeg">
+                  </div>
+                  <div class="ec-displayC__catch">足の透かし模様が美しいミニテーブル
+                  </div>
+                  <div class="ec-displayC__title">ミニテーブル
+                  </div>
+                  <div class="ec-displayC__price--sp">¥ 1,785
+                  </div></a>
+              </div>
+              <div class="ec-displayC__cell"><a href="/moc/guest/item/">
+                  <div class="ec-displayC__img"><img src="http://demo3.ec-cube.net/upload/save_image/0701104933_5593472d8d179.jpeg">
+                  </div>
+                  <div class="ec-displayC__catch">足の透かし模様が美しいミニテーブル
+                  </div>
+                  <div class="ec-displayC__title">ミニテーブル
+                  </div>
+                  <div class="ec-displayC__price">¥ 1,785
+                  </div></a>
+              </div>
+            </div>
+          </div>
+          <div class="ec-role">
+            <div class="ec-grid3">
+              <div class="ec-grid3__cell3">
+                <div class="ec-news">
+                  <div class="ec-news__title">新着情報
+                  </div>
+                  <ul class="ec-news__items">
+                    <li class="ec-news__item">
+                      <div class="ec-newsline">
+                        <div class="ec-newsline__info">
+                          <div class="ec-newsline__date">2016/09/29
+                          </div>
+                          <div class="ec-newsline__comment">サイトオープンしました
+                          </div>
+                          <div class="ec-newsline__close"><a class="ec-closeBtn--circle"><span class="ec-closeBtn--circle__icon">
+                                <div class="ec-icon"><img src="/moc/icon/angle-down-white.svg" alt=""></div></span></a>
+                          </div>
+                        </div>
+                        <div class="ec-newsline__description">一人暮らしからオフィスなどさまざまなシーンで あなたの生活をサポートするグッズをご家庭へお届けします！
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="ec-grid3__cell">
+                <div class="ec-banner">
+                  <div class="ec-banner__intro">5000円以上の購入で
+                  </div>
+                  <div class="ec-banner__title">配送料無料
+                  </div>
+                  <div>一部地域は除く</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ec-role">
+            <div class="ec-displayD">
+              <div class="ec-displayD__cell"><a href="/moc/guest/item/">
+                  <div class="ec-displayD__img"><img src="http://demo3.ec-cube.net/upload/save_image/0701104933_5593472d8d179.jpeg"></div></a>
+              </div>
+              <div class="ec-displayD__cell"><a href="/moc/guest/item/">
+                  <div class="ec-displayD__img"><img src="http://demo3.ec-cube.net/upload/save_image/0701104933_5593472d8d179.jpeg"></div></a>
+              </div>
+              <div class="ec-displayD__cell"><a href="/moc/guest/item/">
+                  <div class="ec-displayD__img"><img src="http://demo3.ec-cube.net/upload/save_image/0701104933_5593472d8d179.jpeg"></div></a>
+              </div>
+              <div class="ec-displayD__cell"><a href="/moc/guest/item/">
+                  <div class="ec-displayD__img"><img src="http://demo3.ec-cube.net/upload/save_image/0701104933_5593472d8d179.jpeg"></div></a>
+              </div>
+              <div class="ec-displayD__cell"><a href="/moc/guest/item/">
+                  <div class="ec-displayD__img"><img src="http://demo3.ec-cube.net/upload/save_image/0701104933_5593472d8d179.jpeg"></div></a>
+              </div>
+              <div class="ec-displayD__cell"><a href="/moc/guest/item/">
+                  <div class="ec-displayD__img"><img src="http://demo3.ec-cube.net/upload/save_image/0701104933_5593472d8d179.jpeg"></div></a>
+              </div>
+            </div>
+            <div class="ec-displayD">
+              <div class="ec-displayD__cell"><a href="/moc/guest/item/">
+                  <div class="ec-displayD__img"><img src="http://demo3.ec-cube.net/upload/save_image/0701104933_5593472d8d179.jpeg"></div></a>
+              </div>
+              <div class="ec-displayD__cell"><a href="/moc/guest/item/">
+                  <div class="ec-displayD__img"><img src="http://demo3.ec-cube.net/upload/save_image/0701104933_5593472d8d179.jpeg"></div></a>
+              </div>
+              <div class="ec-displayD__cell"><a href="/moc/guest/item/">
+                  <div class="ec-displayD__img"><img src="http://demo3.ec-cube.net/upload/save_image/0701104933_5593472d8d179.jpeg"></div></a>
+              </div>
+              <div class="ec-displayD__cell"><a href="/moc/guest/item/">
+                  <div class="ec-displayD__img"><img src="http://demo3.ec-cube.net/upload/save_image/0701104933_5593472d8d179.jpeg"></div></a>
+              </div>
+              <div class="ec-displayD__cell"><a href="/moc/guest/item/">
+                  <div class="ec-displayD__img"><img src="http://demo3.ec-cube.net/upload/save_image/0701104933_5593472d8d179.jpeg"></div></a>
+              </div>
+              <div class="ec-displayD__cell"><a href="/moc/guest/item/">
+                  <div class="ec-displayD__img"><img src="http://demo3.ec-cube.net/upload/save_image/0701104933_5593472d8d179.jpeg"></div></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ec-layoutRole__contentBottom">
+      </div>
+      <div class="ec-layoutRole__footer">
+        <div class="ec-footerRole">
+          <div class="ec-footerRole__inner">
+            <ul class="ec-footerNavi">
+              <li class="ec-footerNavi__link"><a href="/moc/guest/about">当サイトについて</a>
+              </li>
+              <li class="ec-footerNavi__link"><a href="/moc/guest/privacy">プライバシーポリシー</a>
+              </li>
+              <li class="ec-footerNavi__link"><a href="/moc/guest/tradelaw">特定商取引法に基づく表記</a>
+              </li>
+              <li class="ec-footerNavi__link"><a href="/moc/guest/contact">お問い合わせ</a>
+              </li>
+            </ul>
+            <div class="ec-footerTitle">
+              <div class="ec-footerTitle__logo"><a href="/moc/sitemap.html">EC-CUBE3 STYLEGUIDE</a>
+              </div>
+              <div class="ec-footerTitle__copyright">copyright (c) EC-CUBE3 DEMO SHOP all rights reserved.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ec-overlayRole"></div>
+    <div class="ec-drawerRole"></div>
+    <div class="ec-blockTopBtn"></div>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="/assets/js/script.js"></script>
+  </body>
+</html>
